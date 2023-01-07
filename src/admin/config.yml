@@ -17,7 +17,7 @@ collections:
     folder: "src/posts"
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -29,7 +29,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: []
   - label: "Settings"
     name: "settings"
     editor:
@@ -66,3 +66,24 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "src/pages/about/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+        editor:
+          preview: true
+      - label: "Contact"
+        name: "contact"
+        file: "src/pages/contact/contact.md"
+        fields:
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "email", name: "email", widget: "string" }
+        editor:
+          preview: true
+
+
