@@ -30,6 +30,19 @@ collections:
         multiple: true
         create: true
         options: []
+  - label: "Offer"
+    name: "offer"
+    folder: "src/offers"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Miniature", name: "miniature", widget: "image", required: false}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown", required: false}
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, default: ["offer"], required: false }
+      - { label: "Price", name: "price", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:

@@ -1,0 +1,40 @@
+---
+layout: default
+prism: true
+---
+
+<h1>Offer list</h1>
+
+<section class="mt-15 w-3/4">
+    {% set offerlist = collections.offer %}
+
+    {% for offer in offerlist | reverse %}
+    <article class="my-8 flex flex-col sm:flex-row">
+        <div class="sm:w-2/3">
+            <h2 class="font-bold text-3xl text-gray-900 mb-2">
+                <a href="{{ offer.url | url }}">
+                    {% if offer.data.title %}
+                    {{ offer.data.title }}
+                    {% else %}
+                    Untitled
+                    {% endif %}
+                </a>
+            </h2>
+            {% if offer.data.description %}
+            <p class="text-lg text-gray-500 mb-3">
+                {{ offer.data.description }}
+            </p>
+            {% endif %}
+            <p>
+                <strong>Price:</strong> {{ offer.data.price }}
+            </p>
+        </div>
+        <div class="bg-red-300 sm:w-1/3">
+            <a href="{{ offer.url | url }}" class="text-indigo-500 font-bold text-lg">
+                <img class="max-h-48" src="{{offer.data.miniature}}" alt="{{offer.data.miniature}}">
+            </a>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
