@@ -1,5 +1,5 @@
 ---
-miniature: /static/img/pexels-pixabay-39317-1-.jpg
+thumbnail: /static/img/pexels-pixabay-39317-1-.jpg
 title: Doggo way
 description: How to become doggo? In this course you will transform into real puppy.
 tags:

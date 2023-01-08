@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Contact map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./contact.css" />
+    <script type="module" src="./google-map.js"></script>
+    {% if description %}
+    <meta name="description" content="{{description}}"/>
+    {% endif %}
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    {% if prism == true %}
+    <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
+    {% endif %}
+</head>
+<body>
+    <div class="wrapper flex flex-col min-h-full">
+        {% include "./partials/navbar.html" %}
+
+        <div class="flex flex-col items-center">
+            <h3>My Google Maps Demo</h3>
+            <!--The div element for the map -->
+            <div id="map" class="w-80"></div>
+            <!--
+             The `defer` attribute causes the callback to execute after the full HTML
+             document has been parsed. For non-blocking uses, avoiding race conditions,
+             and consistent behavior across browsers, consider loading using Promises
+             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+            -->
+        </div>
+
+        <div class="mt-auto">
+            {% include "./partials/footer.html" %}
+        </div>
+    </div>
+    <script src="/static/js/alpine.js"></script>
+
+    {% if path == "home" %}
+    <!-- Netlify Identity Widget -->
+    <!-- Needed only if you are using Netlify Identity feature -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {% endif %}
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+            defer
+    ></script>
+</body>
+</html>

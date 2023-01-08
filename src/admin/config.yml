@@ -37,7 +37,7 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Miniature", name: "miniature", widget: "image", required: false}
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown", required: false}
@@ -79,6 +79,12 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+      - label: "Offer Settings"
+        name: "offerSettings"
+        file: "src/_data/offerSettings.yaml"
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Default thumbnail", name: "defaultThumbnail", widget: "image", required: true }
   - label: "Pages"
     name: "pages"
     files:
@@ -94,8 +100,8 @@ collections:
         name: "contact"
         file: "src/pages/contact/contact.md"
         fields:
-          - { label: "Address", name: "address", widget: "string" }
-          - { label: "email", name: "email", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
         editor:
           preview: true
 

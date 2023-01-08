@@ -3,9 +3,9 @@ layout: default
 prism: true
 ---
 
-<h1>Offer list</h1>
 
-<section class="mt-15 w-3/4">
+<section class="container max-w-5xl mt-6 px-6">
+    <h1 class="font-bold text-5xl">{{offerSettings.title}}</h1>
     {% set offerlist = collections.offer %}
 
     {% for offer in offerlist | reverse %}
@@ -29,9 +29,13 @@ prism: true
                 <strong>Price:</strong> {{ offer.data.price }}
             </p>
         </div>
-        <div class="bg-red-300 sm:w-1/3">
-            <a href="{{ offer.url | url }}" class="text-indigo-500 font-bold text-lg">
-                <img class="max-h-48" src="{{offer.data.miniature}}" alt="{{offer.data.miniature}}">
+        <div class="sm:w-1/3">
+            <a href="{{ offer.url | url }}">
+                {% if offer.data.thumbnail %}
+                    <img class="" src="{{offer.data.thumbnail}}" alt="{{offer.data.thumbnail}}">
+                {% else %}
+                    <img class="" src="{{offerSettings.defaultThumbnail}}" alt="{{offer.data.thumbnail}}">
+                {% endif %}
             </a>
         </div>
     </article>

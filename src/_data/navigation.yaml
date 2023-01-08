@@ -2,8 +2,8 @@ items:
   - text: About
     url: /pages/about
   - text: Offer
-    url: /offer
+    url: /offer-list
   - text: Contact
-    url: /contact
+    url: /pages/contact
   - text: Blog
     url: /blog
