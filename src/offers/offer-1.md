@@ -1,5 +1,5 @@
 ---
-title: Offer 1
+title: Test offer for Magda
 description: Lorem 30 dolor sit amet, consectetur adipisicing elit. Aliquid at
   consequuntur delectus dignissimos eaque eligendi eveniet expedita ipsum minus
   natus nisi officiis praesentium quas quia quo ratione suscipit, ullam
